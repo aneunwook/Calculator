@@ -38,7 +38,13 @@ public class Lv1 {
                 try {
                     System.out.print("두 번째 수 를 입력하세요: ");
                     num2 = sc.nextInt();
+
+                    if(op == '/' && num2 == 0){
+                        System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                        continue;
+                    }
                     break;
+
                 }catch (InputMismatchException e){
                     System.out.println("정수를 입력해 주세요!!!");
                     sc.nextLine();
@@ -58,11 +64,8 @@ public class Lv1 {
                     result = num1 * num2;
                     break;
                 case '/':
-                    if (num2 == 0) {
-                        System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                    }
                     result = num1 / num2;
-                    break;
+
             }
 
             System.out.println("결과 : " + result);
