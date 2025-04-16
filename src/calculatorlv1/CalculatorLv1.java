@@ -16,7 +16,14 @@ public class CalculatorLv1 {
                 try{
                     System.out.print("첫 번째 수 를 입력하세요: ");
                     num1 = sc.nextInt();
+
+                    if(num1 < 0){
+                        System.out.println("음수는 입력 할 수 없습니다!");
+                        continue;
+                    }
+
                     break;
+
                 }catch (InputMismatchException e){
                     System.out.println("정수를 입력해 주세요!!!");
                     sc.nextLine();
@@ -39,10 +46,16 @@ public class CalculatorLv1 {
                     System.out.print("두 번째 수 를 입력하세요: ");
                     num2 = sc.nextInt();
 
+                    if(num2 < 0){
+                        System.out.println("음수는 입력 할 수 없습니다!");
+                        continue;
+                    }
+
                     if(op == '/' && num2 == 0){
                         System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                         continue;
                     }
+
                     break;
 
                 }catch (InputMismatchException e){
