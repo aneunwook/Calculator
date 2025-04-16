@@ -1,5 +1,6 @@
 package calculatorlv1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lv1 {
@@ -11,14 +12,38 @@ public class Lv1 {
         char op;
 
         while (true) {
-            System.out.print("첫 번째 수 를 입력하세요: ");
-            num1 = sc.nextInt();
+            while (true) {
+                try{
+                    System.out.print("첫 번째 수 를 입력하세요: ");
+                    num1 = sc.nextInt();
+                    break;
+                }catch (InputMismatchException e){
+                    System.out.println("정수를 입력해 주세요!!!");
+                    sc.nextLine();
+                }
+            }
 
-            System.out.print("연산자를 선택해 주세요(+, -, *, /): ");
-            op = sc.next().charAt(0);
+            while (true){
+                System.out.print("연산자를 선택해 주세요(+, -, *, /): ");
+                op = sc.next().charAt(0);
 
-            System.out.print("두 번째 수 를 입력하세요: ");
-            num2 = sc.nextInt();
+                if(op != '+' && op != '-' && op != '*' && op != '/'){
+                    sc.nextLine();
+                    continue;
+                }
+                break;
+            }
+
+            while (true){
+                try {
+                    System.out.print("두 번째 수 를 입력하세요: ");
+                    num2 = sc.nextInt();
+                    break;
+                }catch (InputMismatchException e){
+                    System.out.println("정수를 입력해 주세요!!!");
+                    sc.nextLine();
+                }
+            }
 
             int result = 0;
 
@@ -51,3 +76,4 @@ public class Lv1 {
 
     }
 }
+
