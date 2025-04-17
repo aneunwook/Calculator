@@ -45,6 +45,14 @@ public class CalculatorLv2 {
         return result;
     }
 
+    public List<Integer> getResults(){
+        return results;
+    }
+
+    public void setResults(int result){
+        this.results.add(result);
+    }
+
 
 
 }

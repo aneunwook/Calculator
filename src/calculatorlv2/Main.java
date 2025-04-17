@@ -67,6 +67,9 @@ public class Main {
 
             int result = calculatorLv2.calculator(num1, num2, op);
             System.out.println("결과 :" + result);
+            calculatorLv2.setResults(result);
+
+            System.out.println("계산 이력 :" + calculatorLv2.getResults());
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
 
             String keepGoing = sc.next();
