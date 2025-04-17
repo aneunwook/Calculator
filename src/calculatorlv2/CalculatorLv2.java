@@ -53,6 +53,9 @@ public class CalculatorLv2 {
         this.results.add(result);
     }
 
+    public void removeResult(){
+        this.results.remove(0);
+    }
 
 
 }

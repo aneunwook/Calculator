@@ -70,6 +70,14 @@ public class Main {
             calculatorLv2.setResults(result);
 
             System.out.println("계산 이력 :" + calculatorLv2.getResults());
+
+            System.out.print("계산 이력을 삭제 하시겠습니까? (y or n) :");
+            char remove = sc.next().charAt(0);
+            if(remove == 'y'){
+                calculatorLv2.removeResult();
+                System.out.println("삭제 되었습니다!");
+            }
+
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
 
             String keepGoing = sc.next();
