@@ -35,22 +35,29 @@ public class Main {
                     System.out.println(e.getMessage());
                     sc.nextLine();
                 }
-
             }
 
             while (true){
                 try {
                     System.out.print("두 번째 수 를 입력하세요: ");
                     num2 = sc.nextDouble();
+
+                    if(op == OperatorType.DIV && num2 == 0){
+                        throw new ArithmeticException();
+                    }
+
                     break;
 
+                }catch (ArithmeticException e){
+                    System.out.println("0으로 나눌 수 없습니다!");
+                    sc.nextLine();
                 }catch (InputMismatchException e){
                     System.out.println("숫자만 입력해주세요!");
                     sc.nextLine();
                 }
             }
 
-            Double result = arithmeticCalculator.calculator(num1, num2, op);
+            double result = arithmeticCalculator.calculator(num1, num2, op);
             System.out.println("결과 :" + result);
             arithmeticCalculator.setResults(result);
             sc.nextLine();
