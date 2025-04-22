@@ -27,11 +27,15 @@ public class Main {
             }
 
             while (true){
-                System.out.print("연산자를 선택해 주세요(+, -, *, /): ");
-                op = OperatorType.operatorChar(sc.next().charAt(0));
+                try{
+                    System.out.print("연산자를 선택해 주세요(+, -, *, /): ");
+                    op = OperatorType.operatorChar(sc.next().charAt(0));
+                    break;
+                }catch (IllegalArgumentException e){
+                    System.out.println(e.getMessage());
+                    sc.nextLine();
+                }
 
-                sc.nextLine();
-                break;
             }
 
             while (true){
