@@ -7,13 +7,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // 제네릭 타입을 Double로 지정한 객체 생성
         ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator();
 
         double num1;
         double num2;
         OperatorType op;
 
-        while (true) {
+        while (true) { // 전체 반복 루프
+            // 첫 번째 수 입력 받기
             while (true) {
                 try{
                     System.out.print("첫 번째 수 를 입력하세요: ");
@@ -26,6 +29,7 @@ public class Main {
                 }
             }
 
+            // 연산자 입력 받기 (+, -, *, /)
             while (true){
                 try{
                     System.out.print("연산자를 선택해 주세요(+, -, *, /): ");
@@ -37,6 +41,7 @@ public class Main {
                 }
             }
 
+            // 두 번째 수 입력 받기
             while (true){
                 try {
                     System.out.print("두 번째 수 를 입력하세요: ");
@@ -57,12 +62,13 @@ public class Main {
                 }
             }
 
+            // 계산 수행
             double result = arithmeticCalculator.calculator(num1, num2, op);
             System.out.println("결과 :" + result);
             arithmeticCalculator.setResults(result);
             sc.nextLine();
 
-
+            // 계산 이후 기능 선택
             boolean keep = true;
 
             while (keep) {
