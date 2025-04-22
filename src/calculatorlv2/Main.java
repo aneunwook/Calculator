@@ -12,7 +12,8 @@ public class Main {
         int num2;
         char op;
 
-        while (true) {
+        while (true) {// 전체 반복 루프
+            // 첫 번째 수 입력 받기
             while (true) {
                 try{
                     System.out.print("첫 번째 수 를 입력하세요: ");
@@ -31,6 +32,7 @@ public class Main {
                 }
             }
 
+            // 연산자 입력 받기 (+, -, *, /)
             while (true){
                 System.out.print("연산자를 선택해 주세요(+, -, *, /): ");
                 op = sc.next().charAt(0);
@@ -42,6 +44,7 @@ public class Main {
                 break;
             }
 
+            // 두 번째 수 입력 받기
             while (true){
                 try {
                     System.out.print("두 번째 수 를 입력하세요: ");
@@ -65,6 +68,7 @@ public class Main {
                 }
             }
 
+            // 계산 수행
             int result = calculatorLv2.calculator(num1, num2, op);
             System.out.println("결과 :" + result);
             calculatorLv2.setResults(result);
