@@ -11,7 +11,8 @@ public class CalculatorLv1 {
         int num2;
         char op;
 
-        while (true) {
+        while (true) {// 전체 반복 루프
+            // 첫 번째 수 입력 받기
             while (true) {
                 try{
                     System.out.print("첫 번째 수 를 입력하세요: ");
@@ -30,6 +31,7 @@ public class CalculatorLv1 {
                 }
             }
 
+            // 연산자 입력 받기 (+, -, *, /)
             while (true){
                 System.out.print("연산자를 선택해 주세요(+, -, *, /): ");
                 op = sc.next().charAt(0);
@@ -41,6 +43,7 @@ public class CalculatorLv1 {
                 break;
             }
 
+            // 두 번째 수 입력 받기
             while (true){
                 try {
                     System.out.print("두 번째 수 를 입력하세요: ");
@@ -66,6 +69,7 @@ public class CalculatorLv1 {
 
             int result = 0;
 
+            // 연산자에 따른 계산 실행
             switch (op) {
                 case '+':
                     result = num1 + num2;
@@ -82,6 +86,8 @@ public class CalculatorLv1 {
             }
 
             System.out.println("결과 : " + result);
+
+            // 계산 계속 여부 확인
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
             String keepGoing = sc.next();
             if(keepGoing.equals("exit")){
