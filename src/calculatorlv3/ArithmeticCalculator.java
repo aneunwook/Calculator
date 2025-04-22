@@ -15,7 +15,7 @@ public class ArithmeticCalculator<T extends Number> {
         this.results.add(results);
     }
 
-    public double calculate(T num1, T num2, OperatorType op){
+    public double calculator(T num1, T num2, OperatorType op){
         double a = num1.doubleValue();
         double b = num2.doubleValue();
         double result = 0.0;
