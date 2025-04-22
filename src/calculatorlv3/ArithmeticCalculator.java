@@ -2,6 +2,7 @@ package calculatorlv3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArithmeticCalculator<T extends Number> {
     private List<T> results = new ArrayList<>();
@@ -32,6 +33,13 @@ public class ArithmeticCalculator<T extends Number> {
 
     public void removeResult(){
         this.results.remove(0);
+
+    }
+
+    public List<T> printBiggerThanInput(T value){
+        return results.stream()
+                .filter(result -> result.doubleValue() > value.doubleValue())
+                .collect(Collectors.toList());
 
     }
 
